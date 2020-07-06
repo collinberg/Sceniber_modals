@@ -4,11 +4,8 @@ A lite weight plugin used for creating simple modals in wordpress using ACF.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Currently I do not queue ACF on my own, so you need to have ACF active on your site. You do not need the Pro Version.
 
-### Prerequisites
-
-What things you need to install the software and how to install them
 
 ```
 Give examples
@@ -16,9 +13,9 @@ Give examples
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+1. Upload wp-post-modal.zip to the /wp-content/plugins/ directory and extract
+2. Activate the plugin through the "Plugins" menu in WordPress
+3. Add the class modal-link to open the href of that link into a modal window.
 
 ```
 Give the example
@@ -32,29 +29,11 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
+## Requirements
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+- [ACF Pro >= 5.7.O](https://www.advancedcustomfields.com/) plugin
+- WordPress 4.7+ because of `[get_theme_file_uri()](https://developer.wordpress.org/reference/functions/get_theme_file_uri)`
+- PHP 5.6+
 
 ## Built With
 
@@ -71,7 +50,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Collin Berg** - *Initial work* - [Website](https://hirecollin.com/)
+* **Collin Berg** - *Main Author* - [Website](https://hirecollin.com/)
 
 ## License
 
