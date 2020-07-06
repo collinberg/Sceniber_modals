@@ -2,32 +2,17 @@
 
 A lite weight plugin used for creating simple modals in wordpress using ACF.
 
+[Example](http://htmlpreview.github.io/?https://github.com/collinberg/Sceniber_modals/blob/master/example/public/index.html)
+
 ## Getting Started
 
 Currently I do not queue ACF on my own, so you need to have ACF active on your site. You do not need the Pro Version.
 
-
-```
-Give examples
-```
-
 ### Installing
 
-1. Upload wp-post-modal.zip to the /wp-content/plugins/ directory and extract
+1. Upload ```Sceniber_modals.zip``` to the /wp-content/plugins/ directory and extract
 2. Activate the plugin through the "Plugins" menu in WordPress
 3. Add the class modal-link to open the href of that link into a modal window.
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Requirements
 
@@ -46,7 +31,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
 
