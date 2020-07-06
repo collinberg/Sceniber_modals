@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.modal {
+  transition: opacity 0.25s ease;
+}
+body.modal-active {
+  overflow-x: hidden;
+  overflow-y: visible !important;
+}
+.modal-content {
+  @apply flex h-half;
+}
+.modal-left {
+    @apply w-3/4 bg-primary;
+}
+
+.modal-image {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.modal-right {
+    @apply py-4 text-left px-6 flex flex-col justify-center;
+}
