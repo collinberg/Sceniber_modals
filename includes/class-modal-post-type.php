@@ -52,7 +52,7 @@ class Modal_Post_Type_Registrations {
 			'labels'             => $labels,
 	    'description'        => __( 'This is a Description.', 'Sceniber_Modals' ),
 			'public'             => false,
-			'publicly_queryable' => true,
+			'publicly_queryable' => false,
 			'show_ui'            => true,
 			'show_in_menu'       => true,
 			'query_var'          => true,

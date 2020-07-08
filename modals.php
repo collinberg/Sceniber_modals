@@ -45,13 +45,29 @@ if ( is_admin() ) {
 	$post_type_admin->init();
 
 }
+/**
+ * Adds styling to the dashboard
+ * to the "At a Glance" metabox.
+ */
+function modal_files() {
+    wp_enqueue_script( 'sceniber-modal', plugin_dir_url( __FILE__ ) . 'assets/js/Logic.js', array('jquery') );
+		wp_enqueue_style( 'sceniber-styles', plugin_dir_url( __FILE__ ) . 'assets/sce-modal.css');
 
+}
+add_action( 'wp_enqueue_scripts', 'modal_files' );
+/**
+ * Adds styling to the dashboard
+ * to the "At a Glance" metabox.
+ */
+function sce_admin_styles() {
+		wp_enqueue_style( 'sceniber-admin_styles', plugin_dir_url( __FILE__ ) . 'assets/modal-admin.css');
+}
+
+add_action( 'admin_enqueue_scripts', 'sce_admin_styles' );
+/**
+ * Modal Templates
+ */
 function sceniber_queue_modal() {
-    require( plugin_dir_path( __FILE__ ) . 'includes/modal-template.php');
+    include( plugin_dir_path( __FILE__ ) . 'includes/modal-template.php');
 }
 add_action( 'wp_footer', 'sceniber_queue_modal' );
-
-function modal_js() {
-    wp_enqueue_script( 'sceniber-modal', plugin_dir_url( __FILE__ ) . 'assets/js/Logic.js', array('jquery') );
-}
-add_action( 'wp_enqueue_scripts', 'modal_js' );

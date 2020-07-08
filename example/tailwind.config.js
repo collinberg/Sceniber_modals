@@ -1,20 +1,8 @@
 // Example `tailwind.config.js` file
 
 module.exports = {
-  important: true,
+  important: false,
   theme: {
-    fontFamily: {
-      'sans': [
-        'benton-sans',
-        'system-ui',
-        'BlinkMacSystemFont',
-        '-apple-system',
-        'Helvetica Neue',
-        'sans-serif',
-      ],
-      display: ['Gilroy', 'sans-serif'],
-      body: ['Graphik', 'sans-serif'],
-    },
     extend: {
       colors: {
         primary: {

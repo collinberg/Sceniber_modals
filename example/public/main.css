@@ -8,12 +8,50 @@
 body.modal-active {
   overflow-x: hidden;
   overflow-y: visible !important;
+
 }
+
+body.modal-active .sitewrapper {
+  filter: blur(2px);
+}
+
+body.modal-active .modal {
+  z-index: 99999;
+}
+
+.modal {
+  @apply fixed w-full h-full top-0 left-0 flex items-center justify-center;
+
+  transition: all 0.4s;
+
+}
+
+.modal-overlay {
+  @apply absolute w-full h-full opacity-50;
+
+  background-color: var(--user-bg);
+}
+
+.modal-container {
+   @apply mx-auto rounded shadow-lg z-50 overflow-y-auto bg-white;
+
+  transition: all 0.4s;
+  transform: translateY(-5vh);
+}
+
+body.modal-active .modal-container {
+    transform: translateY(0vh);
+}
+
 .modal-content {
   @apply flex h-half;
 }
 .modal-left {
-    @apply w-3/4 bg-primary;
+    @apply w-2/5 bg-primary;
+}
+
+.modal-close {
+  @apply absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50;
 }
 
 .modal-image {
@@ -23,5 +61,30 @@ body.modal-active {
 }
 
 .modal-right {
-    @apply py-4 text-left px-6 flex flex-col justify-center;
+    @apply py-4 w-3/5 text-left px-6 flex flex-col justify-center;
+}
+
+.modal-title {
+  @apply font-bold text-3xl mb-5 leading-tight;
+}
+
+.modal-text {
+  @apply text-gray-500 text-lg leading-relaxed;
+}
+
+.modal-btn {
+  @apply rounded-full uppercase text-white mt-5 inline-block;
+
+  font-size: 14px;
+  background-color: var(--user-btn-bg);
+  font-weight: bold;
+  padding: 0.75em 1.5em;
+  transition: all 0.4s;
+}
+.modal-bg {
+  opacity: 1;
+}
+.modal-btn:hover {
+  transform: scale(1.05);
+  filter: saturate(1.3);
 }
