@@ -17899,10 +17899,22 @@ body.modal-active .modal-container {
   z-index: 50;
 }
 
+.modal-large {
+  width: 70% !important;
+}
+
+.modal-large .modal-content {
+  height: 70vh;
+}
+
 .modal-image {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
+  height: auto;
+}
+
+.modal-top-align .modal-content{
   height: auto;
 }
 
@@ -17916,6 +17928,19 @@ body.modal-active .modal-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.modal-top {
+  width: 100%;
+}
+
+.modal-bottom {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+  text-align: left;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .modal-title {
