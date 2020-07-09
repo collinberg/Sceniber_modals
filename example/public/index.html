@@ -17,21 +17,22 @@
     <h2 class='align-center text-5xl font-bold mb-12'>Welcome to Sceinber Modals</h2>
 
 
-  <button class="modal-open bg-transparent border border-gray-500 hover:border-indigo-500 text-gray-500 hover:text-indigo-500 font-bold py-2 px-4 rounded-full mr-5" data-modal='modal-2'>Image Left</button>
+  <button class="modal-open bg-transparent border border-gray-500 hover:border-indigo-500 text-gray-500 hover:text-indigo-500 font-bold py-2 px-4 rounded-full mr-5" data-modal='modal-1'>Image Left</button>
+  <button class="modal-open bg-transparent border border-gray-500 hover:border-indigo-500 text-gray-500 hover:text-indigo-500 font-bold py-2 px-4 rounded-full mr-5" data-modal='modal-2'>Image Right</button>
 </section>
 
   <!--Modal-->
   <div class="modal opacity-0 pointer-events-none" id="modal-1">
     <div class="modal-overlay modal-bg"></div>
 
-    <div class="modal-container w-11/12 lg:w-1/2">
+    <div class="modal-close">
+      <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+        <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+      </svg>
+      <span class="text-sm">(Esc)</span>
+    </div>
 
-      <div class="modal-close">
-        <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-          <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-        </svg>
-        <span class="text-sm">(Esc)</span>
-      </div>
+    <div class="modal-container w-11/12 lg:w-1/2">
 
       <!-- Add margin if you want to see some of the overlay behind the modal-->
       <div class="modal-content">
@@ -43,27 +44,62 @@
               <h2 class='modal-title'>The Most 5 Star Rated App</h2>
               <p class='modal-text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor aliqua.</p>
               <div class='cta_container'>
-                <button class='modal-btn'>Get Started!</button>
+                <a class='modal-btn'>Get Started</a>
+                <a href="" class='secondary_link'>Learn More</a>
               </div>
             </div>
         </div>
     </div>
   </div>
+
+  <div class="modal opacity-0 pointer-events-none" id="modal-2">
+    <div class="modal-overlay modal-bg"></div>
+
+    <div class="modal-close">
+      <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+        <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+      </svg>
+      <span class="text-sm">(Esc)</span>
+    </div>
+
+    <div class="modal-container w-11/12 lg:w-1/2">
+      <!-- Add margin if you want to see some of the overlay behind the modal-->
+      <div class="modal-content">
+        <!--Body-->
+        <div class='modal-right'>
+          <h2 class='modal-title'>The Most 5 Star Rated App</h2>
+          <p class='modal-text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor aliqua.</p>
+          <div class='cta_container'>
+            <a class='modal-btn'>Get Started</a>
+            <a href="" class='secondary_link'>Learn More</a>
+          </div>
+        </div>
+        <div class="modal-left">
+          <img src='dante.jpg' alt="Modal Image for TITLE" class='modal-image'>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     var openmodal = document.querySelectorAll('.modal-open')
     for (var i = 0; i < openmodal.length; i++) {
       openmodal[i].addEventListener('click', function(event){
+
+      targetModal = this.dataset.modal;
     	event.preventDefault()
-    	toggleModal()
+    	toggleModal(targetModal)
       })
     }
 
-    const overlay = document.querySelector('.modal-overlay')
-    overlay.addEventListener('click', toggleModal)
+    const overlay = document.querySelectorAll('.modal-overlay')
+    for (var i = 0; i < overlay.length; i++) {
+      overlay[i].addEventListener('click', closeModal)
+    }
 
     var closemodal = document.querySelectorAll('.modal-close')
     for (var i = 0; i < closemodal.length; i++) {
-      closemodal[i].addEventListener('click', toggleModal)
+      closemodal[i].addEventListener('click', closeModal)
     }
 
     document.onkeydown = function(evt) {
@@ -75,16 +111,31 @@
     	isEscape = (evt.keyCode === 27)
       }
       if (isEscape && document.body.classList.contains('modal-active')) {
-    	toggleModal()
+    	closeModal()
       }
     };
 
 
-    function toggleModal () {
+    function toggleModal (targetModal) {
       const body = document.querySelector('body')
-      const modal = document.querySelector('.modal')
+      let modal = document.getElementById(targetModal)
+
+      console.log('Modal Active: ' + targetModal);
+
+      modal.classList.toggle('active-sce-modal')
       modal.classList.toggle('opacity-0')
       modal.classList.toggle('pointer-events-none')
+
+      body.classList.toggle('modal-active')
+    }
+
+    function closeModal() {
+      const body = document.querySelector('body')
+      const modalActive = document.querySelector('.active-sce-modal')
+
+      modalActive.classList.toggle('active-sce-modal')
+      modalActive.classList.toggle('opacity-0')
+      modalActive.classList.toggle('pointer-events-none')
       body.classList.toggle('modal-active')
     }
 

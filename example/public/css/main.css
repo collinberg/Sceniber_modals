@@ -17842,11 +17842,6 @@ body.modal-active .modal {
   align-items: center;
   justify-content: center;
   transition: all 0.4s;
-  transform: translateY(-5vh);
-}
-
-body.modal-active .modal {
-  transform: translateY(0vh);
 }
 
 .modal-overlay {
@@ -17867,6 +17862,12 @@ body.modal-active .modal {
   --bg-opacity: 1;
   background-color: #fff;
   background-color: rgba(255, 255, 255, var(--bg-opacity));
+  transition: all 0.4s;
+  transform: translateY(-5vh);
+}
+
+body.modal-active .modal-container {
+  transform: translateY(0vh);
 }
 
 .modal-content {
@@ -17932,13 +17933,17 @@ body.modal-active .modal {
   line-height: 1.625;
 }
 
+.cta_container {
+  margin-top: 1.25rem;
+}
+
 .modal-btn {
   border-radius: 9999px;
   text-transform: uppercase;
   --text-opacity: 1;
   color: #fff;
   color: rgba(255, 255, 255, var(--text-opacity));
-  margin-top: 1.25rem;
+  margin-right: 1.25rem;
   display: inline-block;
   font-size: 14px;
   background-color: var(--user-btn-bg);
@@ -17947,10 +17952,19 @@ body.modal-active .modal {
   transition: all 0.4s;
 }
 
+.modal-bg {
+  opacity: 1;
+}
+
 .modal-btn:hover {
-  transform: scale(1.05);
-  -webkit-filter: saturate(1.3);
-          filter: saturate(1.3);
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
+}
+
+.secondary_link {
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
 }
 
 @media (min-width: 640px) {

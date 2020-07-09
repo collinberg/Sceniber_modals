@@ -72,8 +72,12 @@ body.modal-active .modal-container {
   @apply text-gray-500 text-lg leading-relaxed;
 }
 
+.cta_container {
+  @apply mt-5;
+}
+
 .modal-btn {
-  @apply rounded-full uppercase text-white mt-5 inline-block;
+  @apply rounded-full uppercase text-white mr-5 inline-block;
 
   font-size: 14px;
   background-color: var(--user-btn-bg);
@@ -81,10 +85,17 @@ body.modal-active .modal-container {
   padding: 0.75em 1.5em;
   transition: all 0.4s;
 }
+
 .modal-bg {
   opacity: 1;
 }
+
 .modal-btn:hover {
-  transform: scale(1.05);
-  filter: saturate(1.3);
+  filter: brightness(0.9);
+}
+
+.secondary_link {
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
 }
