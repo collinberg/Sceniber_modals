@@ -3,6 +3,6 @@
   <a class='modal-btn' href="<?php the_field('main_button_link', $modal->ID); ?>"><?php the_field('main_button_text', $modal->ID); ?></a>
   <?php endif;
   if( get_field('secondary_action', $modal->ID) ): ?>
-  <a href="<?php the_field('2nd_link_link', $modal->ID); ?>" class=''><?php the_field('2nd_button_text', $modal->ID); ?></a>
+  <a href="<?php the_field('2nd_button_link', $modal->ID); ?>" class='secondary_link'><?php the_field('2nd_link_text', $modal->ID); ?></a>
   <?php endif; ?>
 </div>

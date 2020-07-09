@@ -47,7 +47,9 @@ if($background_image_type == 'Repeat'): $background_image_type = 'contain'; endi
         include(plugin_dir_path( __FILE__ ) .'layouts/LeftAlign.php');
       elseif($layout == 'right'):
         include(plugin_dir_path( __FILE__ ) .'layouts/RightAlign.php');
-      elseif($layout == 'center'):
+      elseif($layout == 'top'):
+        include(plugin_dir_path( __FILE__ ) .'layouts/TopAlign.php');
+      else:
         include(plugin_dir_path( __FILE__ ) .'layouts/Center.php');
       endif;  ?>
 
