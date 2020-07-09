@@ -54,14 +54,34 @@ body.modal-active .modal-container {
   @apply absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50;
 }
 
+.modal-large {
+  width: 70% !important;
+}
+
+.modal-large .modal-content {
+  height: 70vh;
+}
+
 .modal-image {
   object-fit: cover;
   width: 100%;
   height: auto;
 }
 
+.modal-top-align .modal-content{
+  height: auto;
+}
+
 .modal-right {
     @apply py-4 w-3/5 text-left px-6 flex flex-col justify-center;
+}
+
+.modal-top {
+  @apply w-full;
+}
+
+.modal-bottom {
+  @apply py-4 w-full text-left px-6;
 }
 
 .modal-title {
