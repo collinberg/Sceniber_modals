@@ -40,21 +40,19 @@ if($background_image_type == 'Repeat'): $background_image_type = 'contain'; endi
     </svg>
     <span class="text-sm">(Esc)</span>
   </div>
-  <div class="modal-container w-11/12 lg:w-1/2">
 
-      <?php
-      if($layout == 'left'):
-        include(plugin_dir_path( __FILE__ ) .'layouts/LeftAlign.php');
-      elseif($layout == 'right'):
-        include(plugin_dir_path( __FILE__ ) .'layouts/RightAlign.php');
-      elseif($layout == 'top'):
-        include(plugin_dir_path( __FILE__ ) .'layouts/TopAlign.php');
-      else:
-        include(plugin_dir_path( __FILE__ ) .'layouts/Center.php');
-      endif;  ?>
+    <?php
+    if($layout == 'left'):
+      include(plugin_dir_path( __FILE__ ) .'layouts/LeftAlign.php');
+    elseif($layout == 'right'):
+      include(plugin_dir_path( __FILE__ ) .'layouts/RightAlign.php');
+    elseif($layout == 'top'):
+      include(plugin_dir_path( __FILE__ ) .'layouts/TopAlign.php');
+    else:
+      include(plugin_dir_path( __FILE__ ) .'layouts/Center.php');
+    endif;  ?>
 
 
-  </div>
 </div>
 <?php endforeach; ?>
 <!-- end Modal -->

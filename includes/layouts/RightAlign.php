@@ -1,5 +1,6 @@
+<div class="modal-container w-11/12 lg:w-1/2">
 <?php $img = get_field('modal_image', $modal->ID); ?>
-<div class="modal-content">
+  <div class="modal-content">
   <!--Body-->
       <div class='modal-right'>
         <h2 class='modal-title'><?php the_field('modal_title', $modal->ID); ?></h2>
@@ -17,3 +18,4 @@
         <img src="<?php echo $img['url']; ?>" class='hidden'>
       </div>
   </div>
+</div>
